@@ -2,7 +2,6 @@ import { View, Image, Text } from "react-native";
 
 import Button from "../../components/Button";
 import ButtonQuiet from "../../components/ButtonQuiet";
-
 import Container from "../../layout/Container";
 
 import Logotipo from "../../assets/logotipo.png";
@@ -11,13 +10,21 @@ import Google from "../../assets/google.png";
 import Apple from "../../assets/apple.png";
 import Next from "../../assets/next.png";
 
+import useTypedNavigation from "../../utils/hooks/navigation";
+
 export default function Welcome(){
+    const navigation = useTypedNavigation()
+
+    const handleNavigateToAccess = () => {
+        navigation.navigate('login')
+    }
+
     return(
         <Container>
             <View className="flex-1 justify-center">
                 <View className="w-full h-fit justify-center items-center gap-y-8">
                     <Image source={Logotipo} resizeMode="contain" className="w-72 h-40"/>
-                    <Button label="Acessar" />
+                    <Button label="Acessar" onPress={handleNavigateToAccess} />
                     <View className="flex flex-row gap-y-4 gap-x-4">
                         <ButtonQuiet label="Apple" icon={Google}/>
                         <ButtonQuiet label="Facebook" icon={Facebook}/>
