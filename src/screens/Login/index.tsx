@@ -1,11 +1,24 @@
 import Container from "../../layout/Container";
 import { Text, View, Image } from "react-native"
 import { Button, ButtonQuiet, TextField } from "../../components";
+
 import Logo from '../../assets/logo.png'
 import Linker from "../../components/Linker";
 import Next from "../../assets/next.png";
 
+import useTypedNavigation from "../../utils/hooks/navigation"
+
 export default function Login(){
+    const navigation = useTypedNavigation()
+
+    const handleNavigationToRecover = () => {
+        navigation.navigate('recoverPassword')
+    }
+
+    const handleNavigateToRegister = () => {
+        navigation.navigate('register')
+    }
+    
     return(
         <Container>
             <View className="flex gap-y-8 mx-auto my-0 w-full px-8 ">
@@ -17,8 +30,8 @@ export default function Login(){
                 <View className="flex flex-col w-full justify-center items-center gap-y-4 ">
                     <TextField label="Email ou Telefone:"/>
                     <TextField label="Senha: " textContentType="password" secureTextEntry={true} />
-                    <Linker label="Esqueceu sua senha? Clique aqui!" className="self-end"/>
-                    <Button label="Login" />
+                    <Linker label="Esqueceu sua senha? Clique aqui!" className="self-end" onPress={handleNavigationToRecover}/>
+                    <Button label="Login" showIcon={true}/>
                 </View>
 
                 <View className="mx-auto my-0">
@@ -30,6 +43,7 @@ export default function Login(){
                         label="Cadastre-se" 
                         imageStyle={{ width: 26, height: 26 }}
                         className="flex-row text-black gap-y-0 gap-x-1"
+                        onPress={handleNavigateToRegister}
                     />
                 </View>
             </View>

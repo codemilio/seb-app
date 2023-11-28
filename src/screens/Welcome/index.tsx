@@ -18,13 +18,17 @@ export default function Welcome(){
     const handleNavigateToAccess = () => {
         navigation.navigate('login')
     }
+    
+    const handleNavigateToRegister = () => {
+        navigation.navigate('register')
+    }
 
     return(
         <Container>
             <View className="flex-1 justify-center">
                 <View className="w-full h-fit justify-center items-center gap-y-8">
                     <Image source={Logotipo} resizeMode="contain" className="w-72 h-40"/>
-                    <Button label="Acessar" onPress={handleNavigateToAccess} />
+                    <Button label="Acessar" showIcon={true} onPress={handleNavigateToAccess} />
                     <View className="flex flex-row gap-y-4 gap-x-4">
                         <ButtonQuiet label="Apple" icon={Google}/>
                         <ButtonQuiet label="Facebook" icon={Facebook}/>
@@ -38,6 +42,7 @@ export default function Welcome(){
                         label="Cadastre-se" 
                         imageStyle={{ width: 26, height: 26 }}
                         className="flex-row text-black gap-y-0 gap-x-2"
+                        onPress={handleNavigateToRegister}
                     />
                 </View>
             </View>
