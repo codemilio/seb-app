@@ -10,6 +10,13 @@ export type RootStackPropList = {
     registerForm: {
         role: "CLIENT" | "SELLER"
     }
+    authenticated: undefined
+    tabs: undefined
+    home: undefined
+    questions: undefined
+    favorites: undefined
+    notifications: undefined
+    profile: undefined
 }
 
 export type NavigationProp = NativeStackNavigationProp<RootStackPropList>

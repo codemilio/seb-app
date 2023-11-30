@@ -1,10 +1,10 @@
 import { Text, View, Image } from "react-native";
-
 import type { RouteProp } from "@react-navigation/native";
 import type { RootStackPropList } from "../../utils/hooks/navigation";
+
 import { FormClient, FormSeller, HeaderForm } from "../../components";
-import Logo from '../../assets/logo2.png'
 import ContainerForm from "../../layout/ContainerForm";
+import Logo from '../../assets/logo2.png'
 
 export type Props = {
     route: RouteProp<RootStackPropList, 'registerForm'>;

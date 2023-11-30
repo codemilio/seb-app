@@ -19,6 +19,10 @@ export default function Login(){
         navigation.navigate('register')
     }
     
+    const handleNavigateToHome = () => {
+        navigation.navigate('authenticated')
+    }
+
     return(
         <Container>
             <View className="flex gap-y-8 mx-auto my-0 w-full px-8 ">
@@ -31,7 +35,7 @@ export default function Login(){
                     <TextField label="Email ou Telefone:"/>
                     <TextField label="Senha: " textContentType="password" secureTextEntry={true} />
                     <Linker label="Esqueceu sua senha? Clique aqui!" className="self-end" onPress={handleNavigationToRecover}/>
-                    <Button label="Login" showIcon={true}/>
+                    <Button label="Login" showIcon={true} onPress={handleNavigateToHome}/>
                 </View>
 
                 <View className="mx-auto my-0">

@@ -1,14 +1,16 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-
 import { 
     Login, 
     Welcome, 
     Register, 
     RegisterForm, 
     RecoverPassword, 
-    RecoverPasswordSuccess
+    RecoverPasswordSuccess,
+    Home
 } from '../screens'
-import { RootStackPropList } from '../utils/hooks/navigation'
+
+import type { RootStackPropList } from '../utils/hooks/navigation'
+import DrawerRoutes from './drawer.routes'
 
 const Stack = createNativeStackNavigator<RootStackPropList>()
 
@@ -21,6 +23,7 @@ export default function StackRoutes() {
             <Stack.Screen name="registerForm" component={RegisterForm}/>
             <Stack.Screen name="recoverPassword" component={RecoverPassword}/>
             <Stack.Screen name="recoverPasswordSuccess" component={RecoverPasswordSuccess}/>
+            <Stack.Screen name="authenticated" component={DrawerRoutes}/>
         </Stack.Navigator>
     )
 }

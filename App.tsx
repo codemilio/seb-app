@@ -1,9 +1,13 @@
-import Loading from "./src/components/Loading"
+import 'react-native-gesture-handler'
+
 import { 
   useFonts, 
   RedHatDisplay_300Light 
 } from '@expo-google-fonts/red-hat-display'
+
+import Loading from "./src/components/Loading"
 import Routes from "./src/routes"
+
 export default function App() {
   const [ fontsLoaded ] = useFonts({ RedHatDisplay_300Light })
 
