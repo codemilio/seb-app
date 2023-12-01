@@ -1,9 +1,15 @@
 import Favorites from "./favorites"
+import Home from "./home"
 import Notifications from "./notifications"
 import Profile from "./profile"
+import Questions from "./questions"
 
-export {
+const Tabs = {
     Favorites,
     Notifications,
-    Profile
+    Profile,
+    Home,
+    Questions
 }
+
+export default Tabs

@@ -12,27 +12,18 @@ const Drawer = createDrawerNavigator<RootStackPropList>();
 export default function DrawerRoutes(){
     return(
         <Drawer.Navigator 
-            screenOptions={{ title: '' }}
             drawerContent={(props) => <DrawerMenu {...props} />} 
+            screenOptions={{ 
+                headerTitle: '', 
+                headerShadowVisible: false, 
+                headerStyle: {
+                    backgroundColor: 'transparent'
+                },
+            }}
         >
             <Drawer.Screen
-                name="profile"
-                options={{ title: 'Minha conta', headerTitle: ''}}
-                component={TabRoutes}
-            />
-            <Drawer.Screen
-                name="home"
-                options={{ title: 'Feiras'}}
-                component={TabRoutes}
-            />
-            <Drawer.Screen
-                name="notifications"
-                options={{ title: 'Notificações'}}
-                component={TabRoutes}
-            />
-            <Drawer.Screen
-                name="questions"
-                options={{ title: 'Dúvidas frequentes'}}
+                name="authenticated"
+                options={{ title: 'Minha conta' }}
                 component={TabRoutes}
             />
         </Drawer.Navigator>

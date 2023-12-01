@@ -1,9 +1,12 @@
-import { View } from "react-native";
+import ContainerTab from "../../layout/ContainerTab";
+import HeaderTab from "../HeaderTab";
+import FavoriteList from "../FavoriteList";
 
 export default function Favorites(){
     return(
-        <View>
-            
-        </View>
+        <ContainerTab>
+            <HeaderTab label="Favoritados"/>
+            <FavoriteList />
+        </ContainerTab>
     )
 }

@@ -9,6 +9,7 @@ import Footer from "./Footer"
 import FormSeller from "./FormSeller";
 import FormClient from "./FormClient";
 import CheckBox from "./CheckBox";
+import Tabs from "./Tabs";
 
 export {
     Button,
@@ -21,5 +22,6 @@ export {
     Footer,
     FormSeller,
     FormClient,
-    CheckBox
+    CheckBox,
+    Tabs
 }

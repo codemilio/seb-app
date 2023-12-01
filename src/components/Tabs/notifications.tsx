@@ -1,9 +1,12 @@
-import { View } from "react-native";
+import HeaderTab from "../HeaderTab";
+import ContainerTab from "../../layout/ContainerTab";
+import NotifyList from "../NotifyList";
 
 export default function Notifications(){
     return(
-        <View>
-            
-        </View>
+        <ContainerTab>
+            <HeaderTab label="Notificações" />
+            <NotifyList />
+        </ContainerTab>
     )
 }

@@ -16,7 +16,7 @@ export default function TextFieldPassword({ label }: Props){
     return(
         <View className="flex flex-col gap-y-2 ">
             <Text className="text-[#086972]"> {label} </Text>
-            <View className="flex flex-row w-full h-10  rounded-md items-center px-4 py-2 bg-[#D9D9D9]">
+            <View className="flex flex-row w-full h-10 rounded-md items-center px-4 py-2 bg-[#D9D9D9]">
                 <TextInput className="flex-1" secureTextEntry={show} textContentType="password" />
                 <Icon 
                     className="flex-shrink-0" 

@@ -5,43 +5,45 @@ import {
 } from "../screens";
 
 import type { RootStackPropList } from "../utils/hooks/navigation";
+import { Tabs } from '../components';
+import SearchBar from '../components/SearchBar';
 
 const Tab = createBottomTabNavigator<RootStackPropList>();
 
 export default function TabRoutes(){
     return(
-        <Tab.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false }}>
+        <Tab.Navigator screenOptions={{tabBarShowLabel: false, headerShown: false }}>
             <Tab.Screen
                 name="questions"
-                component={Home}
+                component={Tabs.Questions}
                 options={{ 
                     tabBarIcon: (props) => <Icon {...props} name="question" />
                 }}
             />
             <Tab.Screen
                 name="favorites"
-                component={Home}
+                component={Tabs.Favorites}
                 options={{ 
                     tabBarIcon: (props) => <Icon {...props} name="star" />
                 }}
             />
-                <Tab.Screen
-                    name="home"
-                    component={Home}
-                    options={{ 
-                        tabBarIcon: (props) => <Icon {...props} name="store" />
-                    }}
-                />
+            <Tab.Screen
+                name="home"
+                component={Tabs.Home}
+                options={{ 
+                    tabBarIcon: (props) => <Icon {...props} name="store" />
+                }}
+            />
             <Tab.Screen
                 name="notifications"
-                component={Home}
+                component={Tabs.Notifications}
                 options={{ 
                     tabBarIcon: (props) => <Icon {...props} name="bell" />
                 }}
             />
             <Tab.Screen
                 name="profile"
-                component={Home}
+                component={Tabs.Profile}
                 options={{ 
                     tabBarIcon: (props) => <Icon {...props} name="user-circle" />
                 }}
