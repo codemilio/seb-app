@@ -22,7 +22,7 @@ export default function DrawerRoutes(){
             }}
         >
             <Drawer.Screen
-                name="authenticated"
+                name="tabs"
                 options={{ title: 'Minha conta' }}
                 component={TabRoutes}
             />

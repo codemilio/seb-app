@@ -6,7 +6,6 @@ import {
     RegisterForm, 
     RecoverPassword, 
     RecoverPasswordSuccess,
-    Home
 } from '../screens'
 
 import type { RootStackPropList } from '../utils/hooks/navigation'

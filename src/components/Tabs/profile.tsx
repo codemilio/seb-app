@@ -23,8 +23,8 @@ export default function Profile(){
                 <HeaderTab label="Pagamentos" />
                 
                 <View className="flex px-4 mb-4 pb-16">
-                    <TextFieldQuiet label="Débito" value="**** **** **** 0000"/>
-                    <TextFieldQuiet label="Crédito" value="**** **** **** 0000"/>
+                    <TextFieldQuiet isPayment label="Débito" value="**** **** **** 0000"/>
+                    <TextFieldQuiet isPayment label="Crédito" value="**** **** **** 0000"/>
                 </View>
             </KeyboardAdapter>
         </ContainerTab>

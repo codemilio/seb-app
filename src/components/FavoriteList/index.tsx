@@ -1,5 +1,4 @@
-import { View } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
+import { View, FlatList } from "react-native";
 
 import FavoriteItem from "./favorite.item";
 import Separator from "../Separator";
@@ -16,7 +15,7 @@ export type IFavorites = {
     label: string
 }
 
-const DATA: IFavorites[] = [
+export const DATA: IFavorites[] = [
     {
         id: "12321312312",
         img: Fav1,

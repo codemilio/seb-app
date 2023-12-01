@@ -1,15 +1,32 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import type { IFavorites } from ".";
+import { twMerge } from "tailwind-merge";
 
-type Props = IFavorites & { }
+type Props = IFavorites & { 
+    imageClassName?: string | '',
+    textClassName?: string | '',
+    viewportClassName?: string | ''
+}
 
-export default function FavoriteItem({ img, label }: Props ){
+export default function FavoriteItem({ 
+    img, 
+    label, 
+    id, 
+    imageClassName = '', 
+    textClassName = '', 
+    viewportClassName ='' 
+}: Props){
     return(
-        <TouchableOpacity className="flex w-full flex-col space-y-4">
-            <View className="shadow-sm shadow-[#2c2c2c7f] flex justify-center items-center rounded-full w-32 h-32 ">
-                <Image source={img} className="h-28 rounded-full" resizeMode="contain" />
+        <TouchableOpacity className={twMerge("flex w-full flex-col space-y-4", viewportClassName)} key={id}>
+            <View className="flex justify-center items-center rounded-full w-32 h-32">
+                <Image 
+                    source={img} 
+                    className={
+                    twMerge("w-full h-full rounded-full", imageClassName)} 
+                    resizeMode="contain" 
+                />
             </View>
-            <Text className="text-center text-lg"> {label} </Text>
+            <Text className={twMerge("text-center text-lg", textClassName)}> {label} </Text>
         </TouchableOpacity>
     )
 }
