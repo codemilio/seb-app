@@ -4,11 +4,10 @@ import HeaderTab from "../HeaderTab";
 import HeaderUser from "../HeaderUser";
 import TextFieldQuiet from "../TextFieldQuiet";
 import KeyboardAdapter from "../../layout/KeyboardAdapter";
-import Separator from "../Separator";
 
 export default function Profile(){
     return(
-        <ContainerTab>
+        <ContainerTab showHeader={false}>
             <KeyboardAdapter>
                 <HeaderUser />
                 

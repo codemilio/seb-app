@@ -17,6 +17,9 @@ export type RootStackPropList = {
     favorites: undefined
     notifications: undefined
     profile: undefined
+    details: undefined
+    area: undefined 
+    store: undefined 
 }
 
 export type NavigationProp = NativeStackNavigationProp<RootStackPropList>

@@ -4,7 +4,7 @@ import FavoriteList from "../FavoriteList";
 
 export default function Favorites(){
     return(
-        <ContainerTab>
+        <ContainerTab showSearchBar={false}>
             <HeaderTab label="Favoritados"/>
             <FavoriteList />
         </ContainerTab>

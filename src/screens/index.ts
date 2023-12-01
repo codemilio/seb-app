@@ -5,8 +5,10 @@ import Register from "./Register";
 import RegisterForm from "./RegisterForm";
 import RecoverPassword from "./RecoverPassword";
 import RecoverPasswordSuccess from "./RecoverPasswordSuccess";
+
 // Authenticated routes
-import Home from "./Home";
+import Area from "./Area";
+import Store from "./Store";
 
 export {
     Login,
@@ -15,5 +17,6 @@ export {
     RegisterForm,
     RecoverPassword,
     RecoverPasswordSuccess,
-    Home
+    Area,
+    Store,
 }

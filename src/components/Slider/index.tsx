@@ -1,4 +1,4 @@
-import { Dimensions, View } from "react-native";
+import { Dimensions } from "react-native";
 import Carousel from "react-native-snap-carousel"
 import SliderItem from "./slider.item";
 
@@ -24,20 +24,19 @@ const DATA: ICarousel[] = [
         isOpened: true,
         startAt: "17:00",
         endAt: "22:00",
-        day: "Terça-feira",
+        day: "Terças-feira",
         image: Barueri
     },
     {
-        name: "Feira de Santana",
-        local: "Centro, Santana - SP, 06401-145",
+        name: "Feira do Silveira",
+        local: "Jardim Silveira, Barueri - SP, 06401-145",
         isOpened: false,
         startAt: "17:00",
         endAt: "22:00",
-        day: "Quarta-feira",
+        day: "Quartas-feira",
         image: Santana
     }
 ]
-
 
 const { width: viewportWidth } = Dimensions.get('window');
 
@@ -49,8 +48,8 @@ export default function Slider(){
             itemWidth={viewportWidth * 0.8}
             renderItem={({item}) => <SliderItem {...item} />}
             contentContainerCustomStyle={{
-                paddingLeft: 0, // Para remover o espaço à esquerda
-              }}
+                paddingLeft: 0, 
+            }}
         />
     )
 }

@@ -1,18 +1,15 @@
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { 
-    Home
-} from "../screens";
 
 import type { RootStackPropList } from "../utils/hooks/navigation";
 import { Tabs } from '../components';
-import SearchBar from '../components/SearchBar';
+import StackDetailsRoutes from './stack.details.routes';
 
 const Tab = createBottomTabNavigator<RootStackPropList>();
 
 export default function TabRoutes(){
     return(
-        <Tab.Navigator screenOptions={{tabBarShowLabel: false, headerShown: false }}>
+        <Tab.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false }}>
             <Tab.Screen
                 name="questions"
                 component={Tabs.Questions}
@@ -28,8 +25,8 @@ export default function TabRoutes(){
                 }}
             />
             <Tab.Screen
-                name="home"
-                component={Tabs.Home}
+                name="details"
+                component={StackDetailsRoutes}
                 options={{ 
                     tabBarIcon: (props) => <Icon {...props} name="store" />
                 }}

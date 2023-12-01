@@ -4,7 +4,7 @@ import NotifyList from "../NotifyList";
 
 export default function Notifications(){
     return(
-        <ContainerTab>
+        <ContainerTab showSearchBar={false} >
             <HeaderTab label="Notificações" />
             <NotifyList />
         </ContainerTab>

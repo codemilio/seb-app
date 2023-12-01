@@ -14,11 +14,7 @@ export default function DrawerRoutes(){
         <Drawer.Navigator 
             drawerContent={(props) => <DrawerMenu {...props} />} 
             screenOptions={{ 
-                headerTitle: '', 
-                headerShadowVisible: false, 
-                headerStyle: {
-                    backgroundColor: 'transparent'
-                },
+                headerShown: false,
             }}
         >
             <Drawer.Screen

@@ -1,10 +1,10 @@
 import { Text } from "react-native";
 import Container from "../../layout/Container";
 
-export default function Home(){
+export default function Area(){
     return(
         <Container>
-            <Text> home </Text>
+            <Text> area </Text>
         </Container>
     )
 }

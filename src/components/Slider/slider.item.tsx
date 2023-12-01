@@ -1,12 +1,18 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import type { ICarousel } from ".";
 import classNames from "classnames";
+import useTypedNavigation from "../../utils/hooks/navigation";
 
 type Props = ICarousel & {}
 
 export default function SliderItem({ name, day, endAt, image, isOpened, local, startAt}: Props){
+    const navigation = useTypedNavigation()
+    const handleGoToDetails = () => {
+        navigation.navigate('area')
+    }
+
     return(
-        <TouchableOpacity className="w-full h-96">
+        <TouchableOpacity className="w-full h-96" onPress={handleGoToDetails}>
             <View className="flex-1 h-full rounded-2xl bg-white overflow-hidden">
                 <View className="h-1/2 overflow-hidden">
                     <Image source={image} resizeMode="cover" className="w-full h-full"/>

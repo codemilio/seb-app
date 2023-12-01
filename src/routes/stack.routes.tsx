@@ -1,3 +1,4 @@
+import DrawerRoutes from './drawer.routes'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { 
     Login, 
@@ -9,7 +10,6 @@ import {
 } from '../screens'
 
 import type { RootStackPropList } from '../utils/hooks/navigation'
-import DrawerRoutes from './drawer.routes'
 
 const Stack = createNativeStackNavigator<RootStackPropList>()
 
