@@ -35,12 +35,12 @@ export const DATA: IFavorites[] = [
 
 export default function FavoriteList(){
     return(
-        <View className="flex-1 justify-center items-center">
+        <View className="flex-1 justify-center items-center h-full space-y-4">
             <FlatList 
                 data={DATA}
                 keyExtractor={item => item.id}
-                renderItem={({item}) => <FavoriteItem {...item} />}
-                ItemSeparatorComponent={() => <Separator />}
+                renderItem={({item}) => <FavoriteItem {...item} className="w-32 h-32" imageClassName="h-24"/>}
+                ItemSeparatorComponent={() => <Separator className="h-12"/>}
             />
         </View>
     )

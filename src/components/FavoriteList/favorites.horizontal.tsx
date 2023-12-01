@@ -4,14 +4,14 @@ import { DATA } from './index'
 
 export default function FavoritesHorizontal(){
     return(
-        <View className="flex-1 flex-row p-2">
+        <View className="flex-1 flex-row p-2 mx-auto mt-4 space-x-4 mb-8">
             {DATA.map(item => (
-                <View className="w-28" key={item.id}>
+                <View className="w-fit flex flex-row" key={item.id}>
                     <FavoriteItem 
                         {...item}
-                        imageClassName="h-24" 
                         textClassName="text-sm" 
-                        viewportClassName="space-y-0"
+                        imageClassName="h-16"
+                        className="w-24 h-24"
                     />
                 </View>
             ))}
