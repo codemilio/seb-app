@@ -5,13 +5,13 @@ type Props = {
     children: ReactNode
 }
 
-export default function ContainerForm({children}: Props) {
+export default function KeyboardAdapter({children}: Props) {
     return(
         <KeyboardAvoidingView
-            className="flex-1 py-8"
+            className="flex-1"
             behavior={Platform.OS === "ios" ? "padding" : "height"
         }>
-            <ScrollView className="flex-1" contentContainerStyle={{ paddingBottom: 20}}>
+            <ScrollView className="flex-1" >
                 {children}
             </ScrollView>
         </KeyboardAvoidingView>
