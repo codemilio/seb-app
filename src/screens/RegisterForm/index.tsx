@@ -6,7 +6,7 @@ import { FormClient, FormSeller, HeaderForm } from "../../components";
 import ContainerForm from "../../layout/ContainerForm";
 import Logo from '../../assets/logo2.png'
 
-export type Props = {
+type Props = {
     route: RouteProp<RootStackPropList, 'registerForm'>;
 }
 

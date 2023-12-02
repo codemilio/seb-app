@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 import type { IFavorites } from ".";
 import type { ViewProps } from "react-native";
+import useTypedNavigation from "../../utils/hooks/navigation";
 
 type Props = IFavorites & ViewProps & { 
     imageClassName?: string | '',
@@ -16,8 +17,12 @@ export default function FavoriteItem({
     textClassName = '',
     ...props
 }: Props){
+    const { navigate } = useTypedNavigation()
+    const handleNavigateToStore = () => {
+        navigate('store')
+    }
     return(
-        <TouchableOpacity {...props} className={twMerge("flex w-full flex-col space-y-4", props.className)}>
+        <TouchableOpacity {...props} className={twMerge("flex w-full flex-col space-y-4", props.className)} onPress={handleNavigateToStore}>
             <Image 
                 source={img} 
                 className={

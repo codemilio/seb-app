@@ -1,14 +1,25 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import type { ICarousel } from ".";
 import classNames from "classnames";
 import useTypedNavigation from "../../utils/hooks/navigation";
 
+import type { ICarousel } from ".";
+
 type Props = ICarousel & {}
 
-export default function SliderItem({ name, day, endAt, image, isOpened, local, startAt}: Props){
+export default function SliderItem({ name, day, endAt, image, isOpened, local, startAt }: Props){
     const navigation = useTypedNavigation()
     const handleGoToDetails = () => {
-        navigation.navigate('area')
+        navigation.navigate('area', {
+            location: {
+                name,
+                day,
+                endAt,
+                image,
+                isOpened,
+                local,
+                startAt
+            }
+        })
     }
 
     return(
