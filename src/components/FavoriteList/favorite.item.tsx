@@ -18,9 +18,11 @@ export default function FavoriteItem({
     ...props
 }: Props){
     const { navigate } = useTypedNavigation()
+
     const handleNavigateToStore = () => {
-        navigate('store')
+        if(navigate.name === 'details') navigate('store')
     }
+    
     return(
         <TouchableOpacity {...props} className={twMerge("flex w-full flex-col space-y-4", props.className)} onPress={handleNavigateToStore}>
             <Image 

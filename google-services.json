@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "584075275670",
+    "project_id": "seb-application",
+    "storage_bucket": "seb-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584075275670:android:75702d34da2bd731b6c1b7",
+        "android_client_info": {
+          "package_name": "com.application.seb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584075275670-coj7qt0l978kp5887a4ohnbkkherpv7l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe8zQMWMLLDUcFuvFKSzqA4iodw8PquLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "584075275670-coj7qt0l978kp5887a4ohnbkkherpv7l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "584075275670-7fkolfg8idgv06qug6r07kqdcl45mppk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.application.seb"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

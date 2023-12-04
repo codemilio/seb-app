@@ -9,7 +9,7 @@ const Tab = createBottomTabNavigator<RootStackPropList>();
 
 export default function TabRoutes(){
     return(
-        <Tab.Navigator initialRouteName="store" screenOptions={{ headerShown: false, tabBarShowLabel: false }}>
+        <Tab.Navigator initialRouteName="details" screenOptions={{ headerShown: false, tabBarShowLabel: false }}>
             <Tab.Screen
                 name="questions"
                 component={Tabs.Questions}

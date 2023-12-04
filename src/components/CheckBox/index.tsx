@@ -6,15 +6,17 @@ import type { TouchableOpacityProps } from "react-native";
 type Props = TouchableOpacityProps & {
     items: string[]
     label: string
+    onSelect: (item: string | null) => void
 }
 
-export default function CheckBox({ items, label }: Props ){
+export default function CheckBox({ items, label, onSelect }: Props ){
     const [selectedItem, setSelectedItem] = useState<string | null>(null)
 
     const handleCheckItem = (item: string) => {
-        setSelectedItem(prevItem => prevItem === item ? null : item)
-    }
-
+        const newValue = selectedItem === item ? null : item
+        setSelectedItem(newValue)
+        onSelect(newValue)
+    };
     return(
         <View className="flex flex-col gap-y-4 mb-4">
             <Text className="text-[#086972]"> {label} </Text>
