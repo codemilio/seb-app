@@ -12,6 +12,15 @@ const registerUser = async ({name, email, gender, password, tell }: UserData) =>
     }
 }
 
+const authenticateUser = async (email: string, password: string) => {
+    try {
+        await auth().signInWithEmailAndPassword(email, password);
+    } catch(error) {
+        console.error(error)
+    }    
+}
+
 export {
-    registerUser
+    registerUser,
+    authenticateUser
 }

@@ -6,6 +6,7 @@ import TextFieldPassword from "../TextFieldPassword"
 import TextField from "../TextField"
 import { useCallback, useState } from "react"
 import { registerUser } from "../../utils/services/user"
+import useTypedNavigation from "../../utils/hooks/navigation"
 
 export type UserData = {
     name: string
@@ -21,11 +22,13 @@ type IHandleUpdateUserData<T extends keyof UserData> = {
 }
 
 export default function FormClient() {
+    const { navigate } = useTypedNavigation()
     const [formState, setFormState] = useState<UserData>({} as UserData)
 
     const handleCreateUser = async () => {
         await registerUser(formState)
         Alert.alert('Mensagem', 'Usuário cadastrado com sucesso')
+        navigate('login')
     }
 
     const handleInputChange = useCallback(<T extends keyof UserData>({ name, value }: IHandleUpdateUserData<T>) => {

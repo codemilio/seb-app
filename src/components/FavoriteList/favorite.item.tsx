@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge";
 import type { IFavorites } from ".";
 import type { ViewProps } from "react-native";
 import useTypedNavigation from "../../utils/hooks/navigation";
+import { useRoute } from '@react-navigation/native';
 
 type Props = IFavorites & ViewProps & { 
     imageClassName?: string | '',
@@ -17,10 +18,11 @@ export default function FavoriteItem({
     textClassName = '',
     ...props
 }: Props){
+    const route = useRoute()
     const { navigate } = useTypedNavigation()
 
     const handleNavigateToStore = () => {
-        if(navigate.name === 'details') navigate('store')
+        if(route.name === 'area') navigate('store')
     }
     
     return(

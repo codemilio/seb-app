@@ -3,7 +3,10 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import Profile from '../../assets/profile.png'
 
-export default function HeaderUser(){
+type Props = {
+    userName: string
+}
+export default function HeaderUser({userName}: Props){
     return(
         <View className="flex flex-row justify-center items-center space-x-4 mt-4 mb-8">
             <TouchableOpacity>
@@ -14,7 +17,7 @@ export default function HeaderUser(){
                     <Icon name="camera" size={16} color="#FFF" />
                 </View>
             </TouchableOpacity>
-            <Text className="text-3xl font-bold text-[#086972]"> Olá,{'\n'} Amanda </Text>
+            <Text className="text-3xl font-bold text-[#086972]"> Olá,{'\n'} {userName.toUpperCase()} </Text>
         </View>
     )
 }

@@ -7,6 +7,7 @@ import {
 
 import Loading from "./src/components/Loading"
 import Routes from "./src/routes"
+import { AuthProvider } from './src/utils/contexts/auth'
 
 export default function App() {
   const [ fontsLoaded ] = useFonts({ RedHatDisplay_300Light })
@@ -14,7 +15,9 @@ export default function App() {
   if(!fontsLoaded) return <Loading/>
 
   return (
-    <Routes />
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
   )
 }
 

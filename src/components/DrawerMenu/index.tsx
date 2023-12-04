@@ -1,17 +1,38 @@
 // CustomDrawerContent.tsx
 import React from 'react';
-import { View, Text, Switch, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, Switch, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import type { DrawerContentComponentProps } from '@react-navigation/drawer'
 import Icon from "react-native-vector-icons/FontAwesome5";
 import classNames from 'classnames';
 import useTypedNavigation from '../../utils/hooks/navigation';
+import { useAuth } from '../../utils/contexts/auth';
 
 const screenHeight = Dimensions.get('window').height;
 
 export default function DrawerMenu(props: DrawerContentComponentProps) {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
   const { navigate } = useTypedNavigation()
+  const { logout } = useAuth()
+
+  const handleLogout = () => {
+    Alert.alert(
+        "", 
+        "Tem certeza que deseja sair?", 
+        [
+            {
+                text: "Cancelar",
+                onPress: () => console.log("Cancel Pressed"),
+                style: "cancel"
+            },
+            { text: "OK", onPress: () => {
+                logout()
+                navigate('login')
+            }}
+        ],
+        { cancelable: false }
+    );
+  }
 
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
@@ -62,7 +83,7 @@ export default function DrawerMenu(props: DrawerContentComponentProps) {
                     <Text className="text-xl font-light">AJUDA</Text>
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => navigate('login')}>
+                <TouchableOpacity onPress={handleLogout}>
                     <Text className="text-xl font-light">SAIR</Text>
                 </TouchableOpacity>
             </View>
