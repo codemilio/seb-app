@@ -21,7 +21,7 @@
       "infoPlist": {
         "NSMotionUsageDescription": "Needs Permission for Steps"
       },
-      "bundleIdentifier": "com.application.seb"
+      "bundleIdentifier": "com.application.streeteatsbarueri"
     },
     "android": {
       "versionCode": 1,
@@ -30,7 +30,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.application.seb"
+      "package": "com.application.streeteatsbarueri"
     },
     "web": {
       "favicon": "./assets/favicon.png"
