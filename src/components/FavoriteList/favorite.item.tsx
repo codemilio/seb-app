@@ -30,8 +30,8 @@ export default function FavoriteItem({
             <Image 
                 source={img} 
                 className={
-                twMerge("w-full h-full rounded-full", imageClassName)} 
-                resizeMode="contain" 
+                twMerge("w-20 h-12 mx-auto", imageClassName)} 
+                resizeMode="contain"
             />
             <Text className={twMerge("text-center text-lg", textClassName)}> {label} </Text>
         </TouchableOpacity>

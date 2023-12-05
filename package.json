@@ -5,6 +5,10 @@
   "scripts": {
     "start": "expo start",
     "dev": "expo start --dev-client",
+    "prebuild": "expo prebuild --clean",
+    "dev:build:ios": "eas build --profile development-simulator --platform ios",
+    "dev:build:android": "eas build --profile development --platform android",  
+    "prod:build:android": "eas build --profile development --platform android",  
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web"
@@ -29,7 +33,6 @@
     "expo-dev-client": "~2.4.12",
     "expo-font": "~11.4.0",
     "expo-modules-autolinking": "1.5.1",
-    "expo-sample-pedometer": "0.2.0",
     "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "firebase": "^10.7.0",

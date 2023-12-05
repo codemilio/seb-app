@@ -9,7 +9,7 @@ type Props = ViewProps
 export default function Footer({ className }: Props){
     return(
         <View className={twMerge("flex -z-10 flex-row justify-center absolute w-full h-full", className)}>
-            <Image source={Barueri} resizeMode="contain" className="w-48 h-16 self-end top-8" />
+            <Image source={Barueri} resizeMode="contain" className="w-48 h-16 self-end" />
         </View>
     )
 }

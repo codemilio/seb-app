@@ -49,14 +49,8 @@ export default function DrawerMenu(props: DrawerContentComponentProps) {
             <View className="flex flex-col p-4 space-y-2">
                 <Text className="text-xl font-light">Tema</Text>
                 <Switch
-                    trackColor={{ false: "#767577", true: "#81b0ff" }}
-                    thumbColor={isDarkTheme ? "#f5dd4b" : "#f4f3f4"}
-                    ios_backgroundColor="#3e3e3e"
-                    onValueChange={toggleTheme}
-                    value={isDarkTheme}
-                    className={classNames('bg-gray-200', {
-                    'bg-blue-600': isDarkTheme
-                    }) }
+                className='w-12'
+                    onValueChange={() => {}}
                 />
             </View>
             

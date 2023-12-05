@@ -23,9 +23,9 @@ export default function Register() {
 
     return(
         <Container showBgEffects={false}>
-            <View className="flex-1 px-8">
+            <View className="flex-1 px-8 h-full">
                 <Header label="Antes de iniciar, como vai utilizar o app?" img={Logo}/>
-                <View className="flex flex-col gap-y-4 items-center">
+                <View className="flex flex-col gap-y-4 items-center mt-8">
                     <Button label="Vendedor" className="bg-[#00CC6A]" onPress={handleNavigateToRegisterSeller}/>
                     <Button label="Cliente" className="bg-[#086972]" onPress={handleNavigateToRegisterClient}/>
                 </View>

@@ -39,8 +39,8 @@ export default function FavoriteList(){
             <FlatList 
                 data={DATA}
                 keyExtractor={item => item.id}
-                renderItem={({item}) => <FavoriteItem {...item} className="w-32 h-32" imageClassName="h-24"/>}
-                ItemSeparatorComponent={() => <Separator className="h-12"/>}
+                renderItem={({item}) => <FavoriteItem {...item} imageClassName="h-24"/>}
+                ItemSeparatorComponent={() => <Separator className="h-6"/>}
             />
         </View>
     )

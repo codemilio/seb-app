@@ -22,7 +22,7 @@ type IHandleUpdateUserData<T extends keyof UserCredentials> = {
 }
 
 export default function Login(){
-    const { login } = useAuth()
+    const { login, isAuthenticated } = useAuth()
     const [user, setUser] = useState<UserCredentials>({} as UserCredentials)
     const navigation = useTypedNavigation()
     
@@ -35,12 +35,22 @@ export default function Login(){
 
     const handleAuthenticateUser = async () => {
         try {
-            login(user.email, user.password).then(() => {
+            if(!user.email || !user.password) {
+                Alert.alert('Mensagem', 'Preencha todos os campos')
+                return
+            }
+            console.log({user})
+            console.log({isAuthenticated})
+            await login(user.email, user.password)
+            if(!isAuthenticated) {
+                Alert.alert('Mensagem', 'Usuário não encontrado')
+                return
+            } else {
+                Alert.alert('Bem vindo', 'Bem vindo ao Street Eats Barueri')
                 handleNavigateToHome()
-            })
+            }
         } catch (error) {
-            console.error(error);
-            Alert.alert('Mensagem', 'Usuário não encontrado')
+            console.log(error)
         }
     }
 

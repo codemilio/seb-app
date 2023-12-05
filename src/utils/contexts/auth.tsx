@@ -7,6 +7,7 @@ type AuthContextType = {
     loading: boolean
     login: (email: string, password: string) =>  Promise<void>
     logout: () => void
+    isAuthenticated: boolean
 }
 
 type AuthProviderProps = {
@@ -28,6 +29,7 @@ const AuthContext = createContext<AuthContextType>({} as AuthContextType)
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(true);
+  const isAuthenticated = !!currentUser
 
   useEffect(() => {
     const unsubscribe = auth().onAuthStateChanged(async user => {
@@ -53,7 +55,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         const userData = userDoc.data() as UserBasicData
         setCurrentUser({ ...userData, email });
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
   };
 
@@ -61,12 +63,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       await auth().signOut();
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
   return (
-    <AuthContext.Provider value={{ currentUser, loading, login, logout }}>
+    <AuthContext.Provider value={{ currentUser, loading, login, logout, isAuthenticated }}>
       {!loading && children}
     </AuthContext.Provider>
   );
